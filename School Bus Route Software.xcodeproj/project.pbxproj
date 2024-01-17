@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911A2B576B6100560C6F /* LoginScreen.swift */; };
 		C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */; };
-		C8C0E4942B2FF746006C2BC4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4932B2FF746006C2BC4 /* ContentView.swift */; };
 		C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */; };
 		C8C0E49A2B2FF747006C2BC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C0E4992B2FF747006C2BC4 /* Preview Assets.xcassets */; };
 		C8C0E4A42B2FF747006C2BC4 /* School_Bus_Route_SoftwareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4A32B2FF747006C2BC4 /* School_Bus_Route_SoftwareTests.swift */; };
@@ -34,9 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C852911A2B576B6100560C6F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		C8C0E48E2B2FF746006C2BC4 /* School Bus Route Software.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School Bus Route Software.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_Bus_Route_SoftwareApp.swift; sourceTree = "<group>"; };
-		C8C0E4932B2FF746006C2BC4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8C0E4972B2FF747006C2BC4 /* School_Bus_Route_Software.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = School_Bus_Route_Software.entitlements; sourceTree = "<group>"; };
 		C8C0E4992B2FF747006C2BC4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -96,10 +96,10 @@
 			isa = PBXGroup;
 			children = (
 				C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */,
-				C8C0E4932B2FF746006C2BC4 /* ContentView.swift */,
 				C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */,
 				C8C0E4972B2FF747006C2BC4 /* School_Bus_Route_Software.entitlements */,
 				C8C0E4982B2FF747006C2BC4 /* Preview Content */,
+				C852911A2B576B6100560C6F /* LoginScreen.swift */,
 			);
 			path = "School Bus Route Software";
 			sourceTree = "<group>";
@@ -259,8 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8C0E4942B2FF746006C2BC4 /* ContentView.swift in Sources */,
 				C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */,
+				C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
