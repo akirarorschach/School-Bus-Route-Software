@@ -6,6 +6,10 @@ struct LoginView: View {
     @State var password: String = ""
     @State var showPassword: Bool = false
     
+    var types = ["Administrator", "Bus Personnel", "Parent/Student"]
+    @State var selectedType: String = "admin"
+    @State var accountType: String = "admin"
+    
     var isSignInButtonDisabled: Bool {
         [name, password].contains(where: \.isEmpty)
     }
@@ -51,11 +55,22 @@ struct LoginView: View {
                 }
 
             }.padding(.horizontal)
-
+            
+            List {
+                Picker("Account Type", selection: $selectedType) {
+                    ForEach(types, id: \.self) {
+                        Text($0)
+                    }
+                }
+                
+            }
+            
             Spacer()
 
             Button {
-                print("do login action")
+                // login action
+                
+                
             } label: {
                 Text("Sign In")
                     .font(.title2)
@@ -72,6 +87,33 @@ struct LoginView: View {
             .cornerRadius(20)
             .disabled(isSignInButtonDisabled) // how to disable while some condition is applied
             .padding()
+            }
+        
+            Button {
+                // signup action
+                
+            } label: {
+                Text("Sign Up")
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(.white)
+            }
+            .frame(height: 50)
+            .frame(maxWidth: .infinity) // how to make a button fill all the space available horizontaly
+            .background(
+                isSignInButtonDisabled ? // how to add a gradient to a button in SwiftUI if the button is disabled
+                LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
+                    LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
+            )
+            .cornerRadius(20)
+            .disabled(isSignInButtonDisabled) // how to disable while some condition is applied
+            .padding()
         }
+    
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginView()
     }
 }

@@ -1,0 +1,15 @@
+{
+    "username": "SBAdmin"
+    "password": "PWAdmin"
+    "accountType": "administrator"
+}
+{
+    "username": "SBPersonnel"
+    "password": "PWPersonnel"
+    "accountType": "busPersonnel"
+}
+{
+    "username": "SBParent"
+    "password": "PWParent"
+    "accountType": "parentStudent"
+}

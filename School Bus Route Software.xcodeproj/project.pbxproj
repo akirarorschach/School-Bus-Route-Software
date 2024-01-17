@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911A2B576B6100560C6F /* LoginScreen.swift */; };
+		C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911F2B57729A00560C6F /* AdminDashboard.swift */; };
+		C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291212B5772E400560C6F /* PersonnelDashboard.swift */; };
+		C85291242B5772F100560C6F /* ParentStudentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291232B5772F100560C6F /* ParentStudentDashboard.swift */; };
 		C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */; };
 		C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */; };
 		C8C0E49A2B2FF747006C2BC4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C0E4992B2FF747006C2BC4 /* Preview Assets.xcassets */; };
@@ -35,6 +38,10 @@
 
 /* Begin PBXFileReference section */
 		C852911A2B576B6100560C6F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		C852911F2B57729A00560C6F /* AdminDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboard.swift; sourceTree = "<group>"; };
+		C85291212B5772E400560C6F /* PersonnelDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelDashboard.swift; sourceTree = "<group>"; };
+		C85291232B5772F100560C6F /* ParentStudentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentStudentDashboard.swift; sourceTree = "<group>"; };
+		C85291282B57789600560C6F /* testAccounts.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = testAccounts.geojson; sourceTree = "<group>"; };
 		C8C0E48E2B2FF746006C2BC4 /* School Bus Route Software.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School Bus Route Software.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_Bus_Route_SoftwareApp.swift; sourceTree = "<group>"; };
 		C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,6 +79,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C852911C2B57720100560C6F /* Administrator */ = {
+			isa = PBXGroup;
+			children = (
+				C852911F2B57729A00560C6F /* AdminDashboard.swift */,
+			);
+			path = Administrator;
+			sourceTree = "<group>";
+		};
+		C852911D2B57722000560C6F /* BusPersonnel */ = {
+			isa = PBXGroup;
+			children = (
+				C85291212B5772E400560C6F /* PersonnelDashboard.swift */,
+			);
+			path = BusPersonnel;
+			sourceTree = "<group>";
+		};
+		C852911E2B57727400560C6F /* ParentStudent */ = {
+			isa = PBXGroup;
+			children = (
+				C85291232B5772F100560C6F /* ParentStudentDashboard.swift */,
+			);
+			path = ParentStudent;
+			sourceTree = "<group>";
+		};
 		C8C0E4852B2FF746006C2BC4 = {
 			isa = PBXGroup;
 			children = (
@@ -95,11 +126,15 @@
 		C8C0E4902B2FF746006C2BC4 /* School Bus Route Software */ = {
 			isa = PBXGroup;
 			children = (
+				C852911E2B57727400560C6F /* ParentStudent */,
+				C852911D2B57722000560C6F /* BusPersonnel */,
+				C852911C2B57720100560C6F /* Administrator */,
 				C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */,
 				C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */,
 				C8C0E4972B2FF747006C2BC4 /* School_Bus_Route_Software.entitlements */,
 				C8C0E4982B2FF747006C2BC4 /* Preview Content */,
 				C852911A2B576B6100560C6F /* LoginScreen.swift */,
+				C85291282B57789600560C6F /* testAccounts.geojson */,
 			);
 			path = "School Bus Route Software";
 			sourceTree = "<group>";
@@ -260,7 +295,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */,
+				C85291242B5772F100560C6F /* ParentStudentDashboard.swift in Sources */,
+				C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */,
 				C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */,
+				C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
