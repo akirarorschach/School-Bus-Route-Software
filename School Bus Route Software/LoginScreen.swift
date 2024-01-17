@@ -11,18 +11,22 @@ struct LoginView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(spacing: 15) {
             Spacer()
+            
+            Text("School Bus Route Software")
+                .font(.title)
+                .multilineTextAlignment(.center)
+                .bold()
+            
+            Text("Student transportation route management software")
+                .multilineTextAlignment(.center)
             
             TextField("Name",
                       text: $name ,
                       prompt: Text("Login").foregroundColor(.blue)
             )
             .padding(10)
-            .overlay {
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(.blue, lineWidth: 2)
-            }
             .padding(.horizontal)
 
             HStack {
@@ -38,10 +42,6 @@ struct LoginView: View {
                     }
                 }
                 .padding(10)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 10)
-                        .stroke(.red, lineWidth: 2) // How to add rounded corner to a TextField and change it colour
-                }
 
                 Button {
                     showPassword.toggle()
