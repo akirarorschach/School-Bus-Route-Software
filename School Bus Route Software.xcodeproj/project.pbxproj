@@ -11,6 +11,14 @@
 		C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911F2B57729A00560C6F /* AdminDashboard.swift */; };
 		C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291212B5772E400560C6F /* PersonnelDashboard.swift */; };
 		C85291242B5772F100560C6F /* ParentStudentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291232B5772F100560C6F /* ParentStudentDashboard.swift */; };
+		C8ACF6DD2BBDD2D00025E2BB /* viewStudents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */; };
+		C8ACF6DF2BBDD2E00025E2BB /* viewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */; };
+		C8ACF6E12BBDD3410025E2BB /* viewShifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */; };
+		C8ACF6E32BBDD34C0025E2BB /* reportWorkAbsence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E22BBDD34C0025E2BB /* reportWorkAbsence.swift */; };
+		C8ACF6E52BBDD3690025E2BB /* manageRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E42BBDD3690025E2BB /* manageRoutes.swift */; };
+		C8ACF6E72BBDD38E0025E2BB /* managePersonnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E62BBDD38E0025E2BB /* managePersonnel.swift */; };
+		C8ACF6E92BBDD3990025E2BB /* manageRosters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E82BBDD3990025E2BB /* manageRosters.swift */; };
+		C8ACF6EB2BBDD3AF0025E2BB /* editRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6EA2BBDD3AF0025E2BB /* editRoute.swift */; };
 		C8BF0DD62B8C3576009C2BFF /* routeMgmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF0DD52B8C3576009C2BFF /* routeMgmt.swift */; };
 		C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */; };
 		C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */; };
@@ -43,6 +51,14 @@
 		C85291212B5772E400560C6F /* PersonnelDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelDashboard.swift; sourceTree = "<group>"; };
 		C85291232B5772F100560C6F /* ParentStudentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentStudentDashboard.swift; sourceTree = "<group>"; };
 		C85291282B57789600560C6F /* testAccounts.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = testAccounts.geojson; sourceTree = "<group>"; };
+		C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewStudents.swift; sourceTree = "<group>"; };
+		C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewRoutes.swift; sourceTree = "<group>"; };
+		C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewShifts.swift; sourceTree = "<group>"; };
+		C8ACF6E22BBDD34C0025E2BB /* reportWorkAbsence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reportWorkAbsence.swift; sourceTree = "<group>"; };
+		C8ACF6E42BBDD3690025E2BB /* manageRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageRoutes.swift; sourceTree = "<group>"; };
+		C8ACF6E62BBDD38E0025E2BB /* managePersonnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = managePersonnel.swift; sourceTree = "<group>"; };
+		C8ACF6E82BBDD3990025E2BB /* manageRosters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageRosters.swift; sourceTree = "<group>"; };
+		C8ACF6EA2BBDD3AF0025E2BB /* editRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRoute.swift; sourceTree = "<group>"; };
 		C8BF0DD42B8C3383009C2BFF /* School-Bus-Route-Software-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "School-Bus-Route-Software-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C8BF0DD52B8C3576009C2BFF /* routeMgmt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeMgmt.swift; sourceTree = "<group>"; };
 		C8C0E48E2B2FF746006C2BC4 /* School Bus Route Software.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School Bus Route Software.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,19 +98,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C852911C2B57720100560C6F /* Administrator */ = {
+		C852911C2B57720100560C6F /* Admin */ = {
 			isa = PBXGroup;
 			children = (
 				C852911F2B57729A00560C6F /* AdminDashboard.swift */,
 				C8BF0DD52B8C3576009C2BFF /* routeMgmt.swift */,
+				C8ACF6E42BBDD3690025E2BB /* manageRoutes.swift */,
+				C8ACF6E62BBDD38E0025E2BB /* managePersonnel.swift */,
+				C8ACF6E82BBDD3990025E2BB /* manageRosters.swift */,
+				C8ACF6EA2BBDD3AF0025E2BB /* editRoute.swift */,
 			);
-			path = Administrator;
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		C852911D2B57722000560C6F /* BusPersonnel */ = {
 			isa = PBXGroup;
 			children = (
 				C85291212B5772E400560C6F /* PersonnelDashboard.swift */,
+				C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */,
+				C8ACF6E22BBDD34C0025E2BB /* reportWorkAbsence.swift */,
 			);
 			path = BusPersonnel;
 			sourceTree = "<group>";
@@ -103,6 +125,8 @@
 			isa = PBXGroup;
 			children = (
 				C85291232B5772F100560C6F /* ParentStudentDashboard.swift */,
+				C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */,
+				C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */,
 			);
 			path = ParentStudent;
 			sourceTree = "<group>";
@@ -133,7 +157,7 @@
 				C8BF0DD42B8C3383009C2BFF /* School-Bus-Route-Software-Info.plist */,
 				C852911E2B57727400560C6F /* ParentStudent */,
 				C852911D2B57722000560C6F /* BusPersonnel */,
-				C852911C2B57720100560C6F /* Administrator */,
+				C852911C2B57720100560C6F /* Admin */,
 				C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */,
 				C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */,
 				C8C0E4972B2FF747006C2BC4 /* School_Bus_Route_Software.entitlements */,
@@ -299,12 +323,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8ACF6DF2BBDD2E00025E2BB /* viewRoutes.swift in Sources */,
+				C8ACF6E52BBDD3690025E2BB /* manageRoutes.swift in Sources */,
 				C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */,
+				C8ACF6EB2BBDD3AF0025E2BB /* editRoute.swift in Sources */,
 				C85291242B5772F100560C6F /* ParentStudentDashboard.swift in Sources */,
 				C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */,
+				C8ACF6DD2BBDD2D00025E2BB /* viewStudents.swift in Sources */,
+				C8ACF6E12BBDD3410025E2BB /* viewShifts.swift in Sources */,
 				C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */,
 				C8BF0DD62B8C3576009C2BFF /* routeMgmt.swift in Sources */,
+				C8ACF6E32BBDD34C0025E2BB /* reportWorkAbsence.swift in Sources */,
 				C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */,
+				C8ACF6E72BBDD38E0025E2BB /* managePersonnel.swift in Sources */,
+				C8ACF6E92BBDD3990025E2BB /* manageRosters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +496,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "School-Bus-Route-Software-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "School Bus Route Software";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
@@ -504,6 +537,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "School-Bus-Route-Software-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "School Bus Route Software";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
