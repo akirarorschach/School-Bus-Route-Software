@@ -59,6 +59,7 @@
 		C8ACF6E62BBDD38E0025E2BB /* managePersonnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = managePersonnel.swift; sourceTree = "<group>"; };
 		C8ACF6E82BBDD3990025E2BB /* manageRosters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageRosters.swift; sourceTree = "<group>"; };
 		C8ACF6EA2BBDD3AF0025E2BB /* editRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRoute.swift; sourceTree = "<group>"; };
+		C8ACF6ED2BBDD5910025E2BB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/usr/lib/libsqlite3.0.tbd; sourceTree = DEVELOPER_DIR; };
 		C8BF0DD42B8C3383009C2BFF /* School-Bus-Route-Software-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "School-Bus-Route-Software-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C8BF0DD52B8C3576009C2BFF /* routeMgmt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeMgmt.swift; sourceTree = "<group>"; };
 		C8C0E48E2B2FF746006C2BC4 /* School Bus Route Software.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School Bus Route Software.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +132,14 @@
 			path = ParentStudent;
 			sourceTree = "<group>";
 		};
+		C8ACF6EC2BBDD5900025E2BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C8ACF6ED2BBDD5910025E2BB /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C8C0E4852B2FF746006C2BC4 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +147,7 @@
 				C8C0E4A22B2FF747006C2BC4 /* School Bus Route SoftwareTests */,
 				C8C0E4AC2B2FF747006C2BC4 /* School Bus Route SoftwareUITests */,
 				C8C0E48F2B2FF746006C2BC4 /* Products */,
+				C8ACF6EC2BBDD5900025E2BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
