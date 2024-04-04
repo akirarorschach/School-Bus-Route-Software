@@ -502,7 +502,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"School Bus Route Software/Preview Content\"";
-				DEVELOPMENT_TEAM = W46XT2XXZV;
+				DEVELOPMENT_TEAM = 8W3GA9TCY3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "School-Bus-Route-Software-Info.plist";
@@ -543,7 +543,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"School Bus Route Software/Preview Content\"";
-				DEVELOPMENT_TEAM = W46XT2XXZV;
+				DEVELOPMENT_TEAM = 8W3GA9TCY3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "School-Bus-Route-Software-Info.plist";
