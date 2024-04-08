@@ -2,6 +2,8 @@ import SwiftUI
 import SQLite3
 import SQLite
 import CryptoKit
+import Vapor
+import Fluent
 
 struct LoginView: SwiftUI.View {
     
@@ -109,14 +111,25 @@ func getHash(forUsername username: String) -> String {
     let dbPath = "accounts.db" // Replace this with the actual path to your SQLite database file
     guard let db = try? Connection(dbPath) else {
         print("Error connecting to database")
-        return "GAH"
+        return "Database connection failed"
+    }
+    
+    struct Account {
+        var username: String
+        var hash: String
+        var salt: String
+        var affiliation: String
+        var type: String
     }
     
     let accounts = Table("accounts")
+    let usernameColumn = Expression<String>("username")
     let hashColumn = Expression<String>("hash")
     let saltColumn = Expression<String>("salt")
-    let usernameColumn = Expression<String>("username")
+    let affiliationColumn = Expression<String>("affiliation")
+    let typeColumn = Expression<String>("type")
     
+        // Select all records from the items table
     do {
         let query = accounts.select(hashColumn, saltColumn)
                             .filter(usernameColumn == username)
@@ -125,11 +138,12 @@ func getHash(forUsername username: String) -> String {
             let hash = row[hashColumn]
             return hash
         }
+        
+        return "Hash not found"
     } catch {
         print("Error executing query: \(error)")
+        return "Query failed"
     }
-    
-    return "getHash done"
 }
 
 func getSalt(forUsername username: String) -> String {
