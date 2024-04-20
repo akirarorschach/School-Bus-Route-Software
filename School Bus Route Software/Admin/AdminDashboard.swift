@@ -32,14 +32,15 @@ struct AdminDashboard: View {
                 }
                 Spacer()
                 
-                HStack {
+                VStack {
                     Text("Dashboard")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                    Spacer(minLength: 0)
+                        .padding()
+                    // Rest of your content here
                 }
-                .padding()
+
                 
                 VStack(alignment: .leading) {
                     HStack(spacing: 0) {
