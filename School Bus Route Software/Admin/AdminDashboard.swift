@@ -32,7 +32,6 @@ struct AdminDashboard: View {
                             Image("profile")
                                 .resizable()
                                 .frame(width: 80, height: 80) // Adjust size as needed
-                                .foregroundColor(.white)
                         }
                         .padding(12) // Increased padding
                     }
@@ -40,10 +39,10 @@ struct AdminDashboard: View {
                 
                 // Dashboard text with black color and larger size
                 VStack(alignment: .leading) {
-                    Text("Dashboard")
+                    Text("Welcome, JOHN")
                         .font(.system(size: 30, weight: .bold)) // Increased font size
-                        .foregroundColor(.black) // Set color to black
                         .padding()
+                        .foregroundColor(.black) // Set text color to black
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
@@ -70,7 +69,6 @@ struct AdminDashboard: View {
         }
     }
 }
-
 
 
 struct TabButton: View {
