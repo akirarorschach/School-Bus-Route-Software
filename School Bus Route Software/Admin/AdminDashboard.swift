@@ -1,5 +1,3 @@
-//God bless our debugging tools!
-
 import SwiftUI
 
 struct AdminDashboard_Previews: PreviewProvider {
@@ -19,56 +17,48 @@ struct AdminDashboard: View {
         GeometryReader { geometry in
             ZStack(alignment: .topTrailing) {
                 // Darker blue banner
-                Color.skyBlue.opacity(0.8) // Increased opacity for a darker shade
-                    .frame(height: geometry.size.height * 0.2)
-                    .alignmentGuide(.top) { _ in geometry.size.height * 0.2 } // Align the blue banner to the top
+                Color.skyBlue.opacity(0.8)
+                    .frame(height: geometry.size.height * 0.2) // Set height to 20% of the parent view height
                 
                 // Profile button with vertically centered alignment within the blue banner
-                .overlay(
-                    HStack {
-                        Spacer()
-                        // Profile button with vertically centered alignment within the blue banner
-                        Button(action: {}) {
-                            Image("profile")
-                                .resizable()
-                                .frame(width: 80, height: 80) // Adjust size as needed
-                        }
-                        .padding(12) // Increased padding
-                    }
-                )
-                
-                // Dashboard text with black color and larger size
-                VStack(alignment: .leading) {
-                    Text("Welcome, JOHN")
-                        .font(.system(size: 30, weight: .bold)) // Increased font size
-                        .padding()
-                        .foregroundColor(.black) // Set text color to black
-                    Spacer()
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                
-                // Lower half with white background and opacity 0.8
-                Color.white.opacity(0.8)
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.8) // Adjust height here
-                    .alignmentGuide(.top) { _ in geometry.size.height * 0.2 } // Align the top of the white background with the bottom of the blue banner
-                    .offset(y: geometry.size.height * 0.2) // Offset the white background below the blue banner
-                
-                // Buttons
                 HStack {
                     Spacer()
-                    TabButton(selected: $tab, title: "Manage Routes", animation: animation)
-                        .frame(height: 40) // Increased button height
-                    TabButton(selected: $tab, title: "Manage Users", animation: animation)
-                        .frame(height: 40) // Increased button height
-                    TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
-                        .frame(height: 40) // Increased button height
-                    Spacer()
+                    Button(action: {}) {
+                        Image("profile")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
+                    .padding(.top, (geometry.size.height * 0.2 - 80) / 2) // Adjust top padding to vertically center the profile icon
+                    .padding(.trailing, 12)
                 }
-                .padding()
+                
+                VStack(spacing: 0) {
+                    // Dashboard text with black color and larger size
+                    Text("Welcome, JOHN")
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.black)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    // Buttons
+                    HStack {
+                        Spacer()
+                        TabButton(selected: $tab, title: "Manage Routes", animation: animation)
+                            .frame(height: 40)
+                        TabButton(selected: $tab, title: "Manage Users", animation: animation)
+                            .frame(height: 40)
+                        TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
+                            .frame(height: 40)
+                        Spacer()
+                    }
+                    .padding()
+                }
             }
         }
     }
 }
+
 
 
 struct TabButton: View {
