@@ -34,10 +34,11 @@ struct AdminDashboard: View {
                 
                 VStack {
                     Text("Dashboard")
-                        .font(.title)
-                        .fontWeight(.bold)
+                        .font(.system(size: 24, weight: .bold))
+                        //.font(Font.custom("YourFontName", size: 24).bold()) (replace this with downloadable font later)
                         .foregroundColor(.white)
                         .padding()
+
                     // Rest of your content here
                 }
 
