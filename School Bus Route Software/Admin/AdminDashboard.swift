@@ -23,21 +23,26 @@ struct AdminDashboard: View {
                     .frame(height: geometry.size.height * 0.2)
                     .alignmentGuide(.top) { _ in geometry.size.height * 0.2 } // Align the blue banner to the top
                 
-                // Profile button
-                Button(action: {}) {
-                    Image("profile")
-                        .resizable()
-                        .frame(width: 80, height: 80)
-                        .foregroundColor(.white)
-                }
-                .padding(8)
-                .alignmentGuide(.top) { _ in geometry.size.height * 0.2 - 40 } // Center the profile icon vertically within the blue banner
+                // Profile button with vertically centered alignment within the blue banner
+                .overlay(
+                    HStack {
+                        Spacer()
+                        // Profile button with vertically centered alignment within the blue banner
+                        Button(action: {}) {
+                            Image("profile")
+                                .resizable()
+                                .frame(width: 80, height: 80) // Adjust size as needed
+                                .foregroundColor(.white)
+                        }
+                        .padding(12) // Increased padding
+                    }
+                )
                 
-                // Dashboard text with increased opacity
+                // Dashboard text with black color and larger size
                 VStack(alignment: .leading) {
                     Text("Dashboard")
-                        .font(.system(size: 24, weight: .bold))
-                        .foregroundColor(Color.black.opacity(0.8)) // Adjust opacity for black color
+                        .font(.system(size: 30, weight: .bold)) // Increased font size
+                        .foregroundColor(.black) // Set color to black
                         .padding()
                     Spacer()
                 }
@@ -53,8 +58,11 @@ struct AdminDashboard: View {
                 HStack {
                     Spacer()
                     TabButton(selected: $tab, title: "Manage Routes", animation: animation)
+                        .frame(height: 40) // Increased button height
                     TabButton(selected: $tab, title: "Manage Users", animation: animation)
+                        .frame(height: 40) // Increased button height
                     TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
+                        .frame(height: 40) // Increased button height
                     Spacer()
                 }
                 .padding()
@@ -62,6 +70,8 @@ struct AdminDashboard: View {
         }
     }
 }
+
+
 
 struct TabButton: View {
     @Binding var selected: String
@@ -78,15 +88,15 @@ struct TabButton: View {
                 if selected == title {
                     Capsule()
                         .fill(Color.white)
-                        .frame(height: 30) // Adjust height here
+                        .frame(height: 40) // Adjust height here
                         .matchedGeometryEffect(id: title, in: animation)
                 }
                 Text(title)
                     .foregroundColor(selected == title ? .black : .white)
-                    .fontWeight(.bold)
+                    .font(.system(size: 20, weight: .bold)) // Increased font size
             }
             .frame(minWidth: 10, maxWidth: 200) // Adjust width here
-            .padding(.horizontal, 8) // Adjust horizontal padding
+            .padding(.horizontal, 16) // Increased horizontal padding
         }
     }
 }
