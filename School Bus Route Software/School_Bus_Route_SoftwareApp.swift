@@ -11,7 +11,8 @@ import SwiftUI
 struct School_Bus_Route_SoftwareApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            //LoginView()
+            AdminDashboard()
         }
     }
 }

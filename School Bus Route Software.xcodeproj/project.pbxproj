@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		320AF4CA2BD4221700800AC4 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AF4C92BD4221700800AC4 /* Extensions.swift */; };
 		C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911A2B576B6100560C6F /* LoginScreen.swift */; };
 		C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911F2B57729A00560C6F /* AdminDashboard.swift */; };
 		C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291212B5772E400560C6F /* PersonnelDashboard.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		320AF4C92BD4221700800AC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C852911A2B576B6100560C6F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		C852911F2B57729A00560C6F /* AdminDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboard.swift; sourceTree = "<group>"; };
 		C85291212B5772E400560C6F /* PersonnelDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelDashboard.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				C8C0E4982B2FF747006C2BC4 /* Preview Content */,
 				C852911A2B576B6100560C6F /* LoginScreen.swift */,
 				C85291282B57789600560C6F /* testAccounts.geojson */,
+				320AF4C92BD4221700800AC4 /* Extensions.swift */,
 			);
 			path = "School Bus Route Software";
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				C8ACF6E12BBDD3410025E2BB /* viewShifts.swift in Sources */,
 				C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */,
 				C8BF0DD62B8C3576009C2BFF /* routeMgmt.swift in Sources */,
+				320AF4CA2BD4221700800AC4 /* Extensions.swift in Sources */,
 				C8ACF6E32BBDD34C0025E2BB /* reportWorkAbsence.swift in Sources */,
 				C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */,
 				C8ACF6E72BBDD38E0025E2BB /* managePersonnel.swift in Sources */,

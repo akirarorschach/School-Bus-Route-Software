@@ -16,43 +16,44 @@ struct AdminDashboard: View {
     @Namespace var animation
     
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {}) {
-                    Image("menu")
-                        .renderingMode(.template)
-                        .foregroundColor(.white)
+        ZStack {
+            Color.skyBlue.opacity(0.6).ignoresSafeArea(.all, edges: .all)
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    Button(action: {}) {
+                        Image("profile")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(.white)
+                    }
+                    .padding(8)
                 }
+                Spacer()
+                
+                HStack {
+                    Text("Dashboard")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                    Spacer(minLength: 0)
+                }
+                .padding()
+                
+                VStack(alignment: .leading) {
+                    HStack(spacing: 0) {
+                        TabButton(selected: $tab, title: "Manage Routes", animation: animation)
+                        TabButton(selected: $tab, title: "Manage Personnel", animation: animation)
+                        TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
+                    }
+                }
+                .background(Color.clear)
+                .clipShape(Capsule())
+                .padding(.horizontal)
+                
                 Spacer(minLength: 0)
             }
-            
-            Button(action: {}) {
-                Image("profile")
-                    .renderingMode(.template)
-                    .foregroundColor(.white)
-            }
-            .padding()
-            
-            HStack {
-                Text("Dashboard")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Spacer(minLength: 0)
-            }
-            .padding()
-            
-            HStack(spacing: 0) {
-                TabButton(selected: $tab, title: "Manage Routes", animation: animation)
-                TabButton(selected: $tab, title: "Manage Personnel", animation: animation)
-                TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
-            }
-            .background(Color.clear)
-            .clipShape(Capsule())
-            .padding(.horizontal)
-            
-            Spacer(minLength: 0)
-                .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         }
     }
 }
@@ -72,14 +73,16 @@ struct TabButton: View {
                 if selected == title {
                     Capsule()
                         .fill(Color.white)
-                        .frame(height: 45)
+                        .frame(height: 30) // Adjust height here
                         .matchedGeometryEffect(id: title, in: animation)
                 }
                 Text(title)
                     .foregroundColor(selected == title ? .black : .white)
                     .fontWeight(.bold)
             }
-            .frame(height: 45) // Move frame here
+            .frame(minWidth: 10, maxWidth: 200) // Adjust width here
+            .padding(.horizontal, 8) // Adjust horizontal padding
         }
     }
 }
+
