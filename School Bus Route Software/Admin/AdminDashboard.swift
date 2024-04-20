@@ -17,65 +17,51 @@ struct AdminDashboard: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
-                // Background colors
-                VStack(spacing: 0) {
-                    // Sky blue color for the top third
-                    Color.skyBlue.opacity(0.6)
-                        .frame(height: geometry.size.height * 0.2) // Adjust height here
-                    
-                    // Gray color for the bottom two-thirds
-                    Color.gray
-                        .frame(height: geometry.size.height * 0.8) // Adjust height here
-                }
+            ZStack(alignment: .topTrailing) {
+                // Darker blue banner
+                Color.skyBlue.opacity(0.8) // Increased opacity for a darker shade
+                    .frame(height: geometry.size.height * 0.2)
+                    .alignmentGuide(.top) { _ in geometry.size.height * 0.2 } // Align the blue banner to the top
                 
-                // Content
-                VStack {
-                    VStack {
-                        HStack {
-                            Spacer()
-                            Button(action: {}) {
-                                Image("profile")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(.white)
-                            }
-                            .padding(8)
-                        }
-                        Spacer()
-                        
-                        VStack {
-                            Text("Dashboard")
-                                .font(.system(size: 24, weight: .bold))
-                                .foregroundColor(.white)
-                                .padding()
-                            
-                            // Rest of your content here
-                        }
-                        
-                        VStack(alignment: .leading) {
-                            HStack(spacing: 0) {
-                                TabButton(selected: $tab, title: "Manage Routes", animation: animation)
-                                TabButton(selected: $tab, title: "Manage Personnel", animation: animation)
-                                TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
-                            }
-                        }
-                        .background(Color.clear)
-                        .clipShape(Capsule())
-                        .padding(.horizontal)
-                        
-                        Spacer(minLength: 0)
-                    }
+                // Profile button
+                Button(action: {}) {
+                    Image("profile")
+                        .resizable()
+                        .frame(width: 80, height: 80)
+                        .foregroundColor(.white)
                 }
-                .alignmentGuide(.top) { _ in
-                    geometry.size.height * 0.4 // align content to the top
+                .padding(8)
+                .alignmentGuide(.top) { _ in geometry.size.height * 0.2 - 40 } // Center the profile icon vertically within the blue banner
+                
+                // Dashboard text with increased opacity
+                VStack(alignment: .leading) {
+                    Text("Dashboard")
+                        .font(.system(size: 24, weight: .bold))
+                        .foregroundColor(Color.black.opacity(0.8)) // Adjust opacity for black color
+                        .padding()
+                    Spacer()
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                
+                // Lower half with white background and opacity 0.8
+                Color.white.opacity(0.8)
+                    .frame(width: geometry.size.width, height: geometry.size.height * 0.8) // Adjust height here
+                    .alignmentGuide(.top) { _ in geometry.size.height * 0.2 } // Align the top of the white background with the bottom of the blue banner
+                    .offset(y: geometry.size.height * 0.2) // Offset the white background below the blue banner
+                
+                // Buttons
+                HStack {
+                    Spacer()
+                    TabButton(selected: $tab, title: "Manage Routes", animation: animation)
+                    TabButton(selected: $tab, title: "Manage Users", animation: animation)
+                    TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
+                    Spacer()
+                }
+                .padding()
             }
         }
     }
 }
-
-
 
 struct TabButton: View {
     @Binding var selected: String
@@ -104,4 +90,3 @@ struct TabButton: View {
         }
     }
 }
-
