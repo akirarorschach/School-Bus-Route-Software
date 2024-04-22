@@ -107,43 +107,46 @@ func openAccounts() -> OpaquePointer? {
     }
 }
 
-func getHash(forUsername username: String) -> String {
-    let dbPath = "accounts.db" // Replace this with the actual path to your SQLite database file
-    guard let db = try? Connection(dbPath) else {
-        print("Error connecting to database")
-        return "Database connection failed"
-    }
+func getHash(forUsername usernameQuery: String) -> String {
+    var queriedHash = "none"
     
-    struct Account {
-        var username: String
-        var hash: String
-        var salt: String
-        var affiliation: String
-        var type: String
-    }
-    
-    let accounts = Table("accounts")
-    let usernameColumn = Expression<String>("username")
-    let hashColumn = Expression<String>("hash")
-    let saltColumn = Expression<String>("salt")
-    let affiliationColumn = Expression<String>("affiliation")
-    let typeColumn = Expression<String>("type")
-    
-        // Select all records from the items table
     do {
-        let query = accounts.select(hashColumn, saltColumn)
-                            .filter(usernameColumn == username)
+        let dbPath = "accounts.db" // Replace this with the actual path to your SQLite database file
+        let db = try Connection(dbPath)
         
-        for row in try db.prepare(query) {
-            let hash = row[hashColumn]
-            return hash
+        let accounts = Table("accounts")
+        let username = Expression<String>("username")
+        let hash = Expression<String>("hash")
+        let salt = Expression<String>("salt")
+        let affiliation = Expression<String>("affiliation")
+        let type = Expression<String>("type")
+        
+//        try db.run(accounts.create { t in
+//            t.column(username)
+//            t.column(hash)
+//        })
+        
+        // SELECT hash FROM accounts WHERE username = '3006031@edison.k12.nj.us'
+        let query = accounts.select(username, hash)
+                            .filter(username == usernameQuery)
+        
+        let rowIterator = try db.prepareRowIterator(query)
+        for user in try Array(rowIterator) {
+            print(user[hash])
+            queriedHash = user[hash]
         }
         
-        return "Hash not found"
+//        for user in try db.prepare(query) {
+//            print(user[hash])
+//            queriedHash = user[hash]
+//        }
+        
+        
     } catch {
-        print("Error executing query: \(error)")
-        return "Query failed"
+        print(error)
     }
+    
+    return(queriedHash)
 }
 
 func getSalt(forUsername username: String) -> String {
