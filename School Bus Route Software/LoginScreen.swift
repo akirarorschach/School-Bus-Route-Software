@@ -15,6 +15,8 @@ struct LoginView: SwiftUI.View {
     @State var selectedType: String = "admin"
     @State var accountType: String = "admin"
     
+//    private var db: OpaquePointer?
+    
     var isSignInButtonDisabled: Bool {
         [name, password].contains(where: \.isEmpty)
     }
@@ -107,39 +109,67 @@ func openAccounts() -> OpaquePointer? {
     }
 }
 
+func openDb() -> OpaquePointer? {
+    let fileURL = try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("accounts.db")
+    print("Opening database")
+    var db: OpaquePointer?
+    guard sqlite3_open(fileURL.path, &db) == SQLITE_OK else {
+        print("Error opening database")
+        sqlite3_close(db)
+        db = nil
+        return db
+    }
+    return db
+}
+
 func getHash(forUsername usernameQuery: String) -> String {
     var queriedHash = "none"
     
+    print("Entering getHash")
+    
     do {
-        let dbPath = "accounts.db" // Replace this with the actual path to your SQLite database file
-        let db = try Connection(dbPath)
+        let dbPath = "accounts.db"
+//        let dbPath = "/Users/alvinwu/Documents/School Bus Route Software/School Bus Route Software/Databases/accounts.db"
+        print("dbPath: \(dbPath)")
+        let db = try Connection(dbPath, readonly: true)
+//        let db = openDb()
         
+        print("Connection: \(db)")
+
         let accounts = Table("accounts")
+        let count = accounts.count
+        print("accounts.count: \(count)")
+        
         let username = Expression<String>("username")
         let hash = Expression<String>("hash")
         let salt = Expression<String>("salt")
         let affiliation = Expression<String>("affiliation")
         let type = Expression<String>("type")
         
-//        try db.run(accounts.create { t in
+//        try db.run(accounts.create(ifNotExists: true) { t in
 //            t.column(username)
 //            t.column(hash)
 //        })
         
-        // SELECT hash FROM accounts WHERE username = '3006031@edison.k12.nj.us'
-        let query = accounts.select(username, hash)
-                            .filter(username == usernameQuery)
+//        let insert = accounts.insert(username <- "test1", hash <- "test2")
+//        try db.run(insert)
         
-        let rowIterator = try db.prepareRowIterator(query)
-        for user in try Array(rowIterator) {
+        // SELECT username, hash FROM accounts WHERE username = '3006031@edison.k12.nj.us'
+        let query = accounts.select(username, hash).filter(username == usernameQuery)
+
+        for user in try db.prepare(accounts) {
+            print(user)
             print(user[hash])
             queriedHash = user[hash]
         }
+
+        print(accounts)
+        print(query)
         
-//        for user in try db.prepare(query) {
-//            print(user[hash])
-//            queriedHash = user[hash]
-//        }
+        for user in try db.prepare(query) {
+            print(user[hash])
+            queriedHash = user[hash]
+        }
         
         
     } catch {

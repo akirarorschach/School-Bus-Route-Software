@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C81211192BD78A5200146624 /* accounts.db in Resources */ = {isa = PBXBuildFile; fileRef = C87D9A462BC0881C00B6CE82 /* accounts.db */; };
 		C852911B2B576B6100560C6F /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911A2B576B6100560C6F /* LoginScreen.swift */; };
 		C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911F2B57729A00560C6F /* AdminDashboard.swift */; };
 		C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291212B5772E400560C6F /* PersonnelDashboard.swift */; };
@@ -356,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C0E49A2B2FF747006C2BC4 /* Preview Assets.xcassets in Resources */,
+				C81211192BD78A5200146624 /* accounts.db in Resources */,
 				C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
