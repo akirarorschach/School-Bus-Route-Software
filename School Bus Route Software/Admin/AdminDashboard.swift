@@ -1,5 +1,3 @@
-//God bless our debugging tools!
-
 import SwiftUI
 
 struct AdminDashboard_Previews: PreviewProvider {
@@ -16,46 +14,52 @@ struct AdminDashboard: View {
     @Namespace var animation
     
     var body: some View {
-        VStack {
-            HStack {
-                Button(action: {}) {
-                    Image("menu")
-                        .renderingMode(.template)
-                        .foregroundColor(.white)
+        GeometryReader { geometry in
+            ZStack(alignment: .topTrailing) {
+                // Darker blue banner
+                Color.skyBlue.opacity(0.8)
+                    .frame(height: geometry.size.height * 0.2) // Set height to 20% of the parent view height
+                
+                // Profile button with vertically centered alignment within the blue banner
+                HStack {
+                    Spacer()
+                    Button(action: {}) {
+                        Image("profile")
+                            .resizable()
+                            .frame(width: 80, height: 80)
+                    }
+                    .padding(.top, (geometry.size.height * 0.2 - 80) / 2) // Adjust top padding to vertically center the profile icon
+                    .padding(.trailing, 12)
                 }
-                Spacer(minLength: 0)
+                
+                VStack(spacing: 0) {
+                    // Dashboard text with black color and larger size
+                    Text("Welcome, JOHN")
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.black)
+                        .padding()
+                    
+                    Spacer()
+                    
+                    // Buttons
+                    HStack {
+                        Spacer()
+                        TabButton(selected: $tab, title: "Manage Routes", animation: animation)
+                            .frame(height: 40)
+                        TabButton(selected: $tab, title: "Manage Users", animation: animation)
+                            .frame(height: 40)
+                        TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
+                            .frame(height: 40)
+                        Spacer()
+                    }
+                    .padding()
+                }
             }
-            
-            Button(action: {}) {
-                Image("profile")
-                    .renderingMode(.template)
-                    .foregroundColor(.white)
-            }
-            .padding()
-            
-            HStack {
-                Text("Dashboard")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                Spacer(minLength: 0)
-            }
-            .padding()
-            
-            HStack(spacing: 0) {
-                TabButton(selected: $tab, title: "Manage Routes", animation: animation)
-                TabButton(selected: $tab, title: "Manage Personnel", animation: animation)
-                TabButton(selected: $tab, title: "Manage Student Rosters", animation: animation)
-            }
-            .background(Color.clear)
-            .clipShape(Capsule())
-            .padding(.horizontal)
-            
-            Spacer(minLength: 0)
-                .background(Color("bg").ignoresSafeArea(.all, edges: .all))
         }
     }
 }
+
+
 
 struct TabButton: View {
     @Binding var selected: String
@@ -72,14 +76,15 @@ struct TabButton: View {
                 if selected == title {
                     Capsule()
                         .fill(Color.white)
-                        .frame(height: 45)
+                        .frame(height: 40) // Adjust height here
                         .matchedGeometryEffect(id: title, in: animation)
                 }
                 Text(title)
                     .foregroundColor(selected == title ? .black : .white)
-                    .fontWeight(.bold)
+                    .font(.system(size: 20, weight: .bold)) // Increased font size
             }
-            .frame(height: 45) // Move frame here
+            .frame(minWidth: 10, maxWidth: 200) // Adjust width here
+            .padding(.horizontal, 16) // Increased horizontal padding
         }
     }
 }
