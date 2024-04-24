@@ -16,6 +16,10 @@
 		C87D9A492BC371BB00B6CE82 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = C87D9A482BC371BB00B6CE82 /* Vapor */; };
 		C87D9A4C2BC3725E00B6CE82 /* Fluent in Frameworks */ = {isa = PBXBuildFile; productRef = C87D9A4B2BC3725E00B6CE82 /* Fluent */; };
 		C89AFC222BC372E700E7D497 /* FluentSQLiteDriver in Frameworks */ = {isa = PBXBuildFile; productRef = C89AFC212BC372E700E7D497 /* FluentSQLiteDriver */; };
+		C8AC2B312BD84AEE00B8AF8A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B302BD84AEE00B8AF8A /* MapKit.framework */; };
+		C8AC2B332BD84C7300B8AF8A /* libswiftMapKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B322BD84C6900B8AF8A /* libswiftMapKit.tbd */; };
+		C8AC2B362BD86C8A00B8AF8A /* libswiftUIKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B342BD86C8200B8AF8A /* libswiftUIKit.tbd */; platformFilter = ios; };
+		C8AC2B372BD86C8A00B8AF8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B352BD86C8200B8AF8A /* UIKit.framework */; platformFilter = ios; };
 		C8ACF6DD2BBDD2D00025E2BB /* viewStudents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */; };
 		C8ACF6DF2BBDD2E00025E2BB /* viewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */; };
 		C8ACF6E12BBDD3410025E2BB /* viewShifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */; };
@@ -72,6 +76,10 @@
 		C85291212B5772E400560C6F /* PersonnelDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelDashboard.swift; sourceTree = "<group>"; };
 		C85291232B5772F100560C6F /* ParentStudentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentStudentDashboard.swift; sourceTree = "<group>"; };
 		C87D9A462BC0881C00B6CE82 /* accounts.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = accounts.db; sourceTree = "<group>"; };
+		C8AC2B302BD84AEE00B8AF8A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		C8AC2B322BD84C6900B8AF8A /* libswiftMapKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftMapKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/usr/lib/swift/libswiftMapKit.tbd; sourceTree = DEVELOPER_DIR; };
+		C8AC2B342BD86C8200B8AF8A /* libswiftUIKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftUIKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/usr/lib/swift/libswiftUIKit.tbd; sourceTree = DEVELOPER_DIR; };
+		C8AC2B352BD86C8200B8AF8A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewStudents.swift; sourceTree = "<group>"; };
 		C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewRoutes.swift; sourceTree = "<group>"; };
 		C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewShifts.swift; sourceTree = "<group>"; };
@@ -105,8 +113,12 @@
 				C87D9A412BBE579700B6CE82 /* SQLite in Frameworks */,
 				C87D9A492BC371BB00B6CE82 /* Vapor in Frameworks */,
 				C8ACF6F52BBE34880025E2BB /* libsqlite3.0.tbd in Frameworks */,
+				C8AC2B332BD84C7300B8AF8A /* libswiftMapKit.tbd in Frameworks */,
+				C8AC2B312BD84AEE00B8AF8A /* MapKit.framework in Frameworks */,
 				C89AFC222BC372E700E7D497 /* FluentSQLiteDriver in Frameworks */,
+				C8AC2B362BD86C8A00B8AF8A /* libswiftUIKit.tbd in Frameworks */,
 				C8ACF6F42BBDEA920025E2BB /* CryptoKit.framework in Frameworks */,
+				C8AC2B372BD86C8A00B8AF8A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +183,10 @@
 		C8ACF6EC2BBDD5900025E2BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8AC2B342BD86C8200B8AF8A /* libswiftUIKit.tbd */,
+				C8AC2B352BD86C8200B8AF8A /* UIKit.framework */,
+				C8AC2B322BD84C6900B8AF8A /* libswiftMapKit.tbd */,
+				C8AC2B302BD84AEE00B8AF8A /* MapKit.framework */,
 				C8ACF6F32BBDEA920025E2BB /* CryptoKit.framework */,
 				C8ACF6ED2BBDD5910025E2BB /* libsqlite3.0.tbd */,
 			);
@@ -211,7 +227,6 @@
 				C8C0E4972B2FF747006C2BC4 /* School_Bus_Route_Software.entitlements */,
 				C8C0E4982B2FF747006C2BC4 /* Preview Content */,
 				C852911A2B576B6100560C6F /* LoginScreen.swift */,
-				C85291282B57789600560C6F /* testAccounts.geojson */,
 				320AF4C92BD4221700800AC4 /* Extensions.swift */,
 			);
 			path = "School Bus Route Software";
@@ -360,7 +375,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8C0E49A2B2FF747006C2BC4 /* Preview Assets.xcassets in Resources */,
-				C81211192BD78A5200146624 /* accounts.db in Resources */,
 				C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
