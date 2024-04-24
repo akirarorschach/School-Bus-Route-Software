@@ -20,6 +20,7 @@
 		C8AC2B332BD84C7300B8AF8A /* libswiftMapKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B322BD84C6900B8AF8A /* libswiftMapKit.tbd */; };
 		C8AC2B362BD86C8A00B8AF8A /* libswiftUIKit.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B342BD86C8200B8AF8A /* libswiftUIKit.tbd */; platformFilter = ios; };
 		C8AC2B372BD86C8A00B8AF8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8AC2B352BD86C8200B8AF8A /* UIKit.framework */; platformFilter = ios; };
+		C8AC2B392BD9ABD300B8AF8A /* addresses.db in Resources */ = {isa = PBXBuildFile; fileRef = C8AC2B382BD9ABD300B8AF8A /* addresses.db */; };
 		C8ACF6DD2BBDD2D00025E2BB /* viewStudents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */; };
 		C8ACF6DF2BBDD2E00025E2BB /* viewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */; };
 		C8ACF6E12BBDD3410025E2BB /* viewShifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */; };
@@ -80,6 +81,7 @@
 		C8AC2B322BD84C6900B8AF8A /* libswiftMapKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftMapKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/usr/lib/swift/libswiftMapKit.tbd; sourceTree = DEVELOPER_DIR; };
 		C8AC2B342BD86C8200B8AF8A /* libswiftUIKit.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libswiftUIKit.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/usr/lib/swift/libswiftUIKit.tbd; sourceTree = DEVELOPER_DIR; };
 		C8AC2B352BD86C8200B8AF8A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C8AC2B382BD9ABD300B8AF8A /* addresses.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = addresses.db; sourceTree = "<group>"; };
 		C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewStudents.swift; sourceTree = "<group>"; };
 		C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewRoutes.swift; sourceTree = "<group>"; };
 		C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewShifts.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		C87D9A452BC0881600B6CE82 /* Databases */ = {
 			isa = PBXGroup;
 			children = (
+				C8AC2B382BD9ABD300B8AF8A /* addresses.db */,
 				C87D9A462BC0881C00B6CE82 /* accounts.db */,
 			);
 			path = Databases;
@@ -374,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8AC2B392BD9ABD300B8AF8A /* addresses.db in Resources */,
 				C8C0E49A2B2FF747006C2BC4 /* Preview Assets.xcassets in Resources */,
 				C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */,
 			);

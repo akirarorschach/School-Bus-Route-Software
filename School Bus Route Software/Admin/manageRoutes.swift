@@ -7,85 +7,64 @@
 
 import SwiftUI
 import MapKit
+import SQLite
+import Vapor
 
-struct ContentView: View {
-    @State private var annotations: [MKPointAnnotation] = []
-    @State private var route: MKRoute?
-
-    let sourceLocation = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194) // San Francisco
-    let destinationLocation = CLLocationCoordinate2D(latitude: 34.0522, longitude: -118.2437) // Los Angeles
-
-    var body: some View {
-        MapView(annotations: annotations, route: route)
-            .onAppear {
-                // Create annotations
-                let sourceAnnotation = MKPointAnnotation()
-                sourceAnnotation.coordinate = sourceLocation
-                sourceAnnotation.title = "San Francisco"
-                annotations.append(sourceAnnotation)
-
-                let destinationAnnotation = MKPointAnnotation()
-                destinationAnnotation.coordinate = destinationLocation
-                destinationAnnotation.title = "Los Angeles"
-                annotations.append(destinationAnnotation)
-
-                // Calculate route
-                let request = MKDirections.Request()
-                request.source = MKMapItem(placemark: MKPlacemark(coordinate: sourceLocation))
-                request.destination = MKMapItem(placemark: MKPlacemark(coordinate: destinationLocation))
-                let directions = MKDirections(request: request)
-                directions.calculate { response, error in
-                    guard let route = response?.routes.first else { return }
-                    self.route = route
-                }
-            }
-    }
+struct ContentView: SwiftUI.View {
+    
 }
 
 struct ContentView_Provider: PreviewProvider {
-    static var previews: some View {
+    static var previews: some SwiftUI.View {
         ContentView()
     }
 }
 
-struct MapView: View {
-    var annotations: [MKPointAnnotation]
-    var route: MKRoute?
+func getAddress(orderQuery: Int) -> String {
+    var queriedAddress = "none"
+    
+    print("Entering getAddress")
+    
+    do {
+        let dbPath = "addresses.db"
+//        let dbPath = "/Users/alvinwu/Documents/School Bus Route Software/School Bus Route Software/Databases/accounts.db"
+        print("dbPath: \(dbPath)")
+        let db = try Connection(dbPath, readonly: true)
+//        let db = openDb()
+        
+        print("Connection: \(db)")
 
-    func makeUIView(context: Context) -> MKMapView {
-        let mapView = MKMapView()
-        mapView.delegate = Context.coordinator
-        return mapView
-    }
+        let addresses = Table("addresses")
+        let count = addresses.count
+        print("addresses.count: \(count)")
+        
+        let order = Expression<Int>("order")
+        let address = Expression<String>("address")
+        
+//        try db.run(accounts.create(ifNotExists: true) { t in
+//            t.column(username)
+//            t.column(hash)
+//        })
+        
+//        let insert = accounts.insert(username <- "test1", hash <- "test2")
+//        try db.run(insert)
+        
+        // SELECT address FROM addresses WHERE order = orderQuery
+        let query = addresses.select(address).filter(order == orderQuery)
 
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        uiView.removeAnnotations(uiView.annotations)
-        uiView.addAnnotations(annotations)
-
-        if let route = route {
-            uiView.addOverlay(route.polyline)
+        // for each address in try db.prepare(query)
+        for item in try db.prepare(query) {
+            print(address)
+            queriedAddress = item[address]
         }
+
+        print(addresses)
+        print(query)
+        
+        
+    } catch {
+        print(error)
     }
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    class Coordinator: NSObject, MKMapViewDelegate {
-        var parent: MapView
-
-        init(_ parent: MapView) {
-            self.parent = parent
-        }
-
-        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-            if let polyline = overlay as? MKPolyline {
-                let renderer = MKPolylineRenderer(polyline: polyline)
-                renderer.strokeColor = .blue
-                renderer.lineWidth = 3
-                return renderer
-            }
-            return MKOverlayRenderer()
-        }
-    }
+    
+    return(queriedAddress)
 }
