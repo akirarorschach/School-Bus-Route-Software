@@ -2,7 +2,7 @@ import SwiftUI
 
 struct AdminDashboard_Previews: PreviewProvider {
     static var previews: some View {
-        AdminDashboard()
+        AdminDashboard(name: "Sushanth")
             .preferredColorScheme(.dark)
             .navigationTitle("")
     }
@@ -12,6 +12,7 @@ struct AdminDashboard: View {
     
     @State var tab = "Manage Routes"
     @Namespace var animation
+    var name: String // Add a parameter to accept the name
     
     var body: some View {
         GeometryReader { geometry in
@@ -34,7 +35,7 @@ struct AdminDashboard: View {
                 
                 VStack(spacing: 0) {
                     // Dashboard text with black color and larger size
-                    Text("Welcome, Sushanth!")
+                    Text("Welcome, \(name)!") // Use the name parameter here
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.black)
                         .padding()
@@ -58,8 +59,6 @@ struct AdminDashboard: View {
         }
     }
 }
-
-
 
 struct TabButton: View {
     @Binding var selected: String
