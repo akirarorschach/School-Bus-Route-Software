@@ -34,7 +34,7 @@ struct AdminDashboard: View {
                 
                 VStack(spacing: 0) {
                     // Dashboard text with black color and larger size
-                    Text("Welcome, JOHN")
+                    Text("Welcome, Sushanth!")
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.black)
                         .padding()

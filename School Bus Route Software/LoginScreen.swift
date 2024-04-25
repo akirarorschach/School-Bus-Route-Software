@@ -10,6 +10,7 @@ struct LoginView: SwiftUI.View {
     @State var name: String = ""
     @State var password: String = ""
     @State var showPassword: Bool = false
+    @State private var loggedIn: Bool = false // New state variable to track login status
     
     var types = ["Admin", "BusPersonnel", "ParentStudent"]
     @State var selectedType: String = "admin"
@@ -67,6 +68,7 @@ struct LoginView: SwiftUI.View {
                 // login action
                 print(getHash(forUsername: "3006031@edison.k12.nj.us"))
                 print(getSalt(forUsername: "3006031@edison.k12.nj.us"))
+                loggedIn = true
                 
             } label: {
                 Text("Sign In")
@@ -84,6 +86,13 @@ struct LoginView: SwiftUI.View {
             .cornerRadius(20)
             .disabled(isSignInButtonDisabled) // how to disable while some condition is applied
             .padding()
+            
+            .navigationTitle("Login") // Set navigation title
+            // Navigation link to AdminView
+            NavigationLink(
+                destination: AdminDashboard(),
+                isActive: $loggedIn, // Only navigate when loggedIn is true
+                label: { EmptyView() } )
             }
         
         }
