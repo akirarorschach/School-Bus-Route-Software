@@ -1,22 +1,29 @@
 import SwiftUI
 import SQLite3
+import SQLite
+import CryptoKit
+import Vapor
+import Fluent
 
-struct LoginView: View {
+struct LoginView: SwiftUI.View {
     
     @State var name: String = ""
     @State var password: String = ""
     @State var showPassword: Bool = false
+    @State private var loggedIn: Bool = false // New state variable to track login status
     
-    var types = ["Administrator", "Bus Personnel", "Parent/Student"]
+    var types = ["Admin", "BusPersonnel", "ParentStudent"]
     @State var selectedType: String = "admin"
     @State var accountType: String = "admin"
+    
+//    private var db: OpaquePointer?
     
     var isSignInButtonDisabled: Bool {
         [name, password].contains(where: \.isEmpty)
     }
     
-    var body: some View {
-        VStack(spacing: 15) {
+    var body: some SwiftUI.View {
+        VStack(spacing: 30) {
             Spacer()
             
             Text("School Bus Route Software")
@@ -56,21 +63,12 @@ struct LoginView: View {
                 }
 
             }.padding(.horizontal)
-            
-            List {
-                Picker("Account Type", selection: $selectedType) {
-                    ForEach(types, id: \.self) {
-                        Text($0)
-                    }
-                }
-                
-            }
-            
-            Spacer()
 
             Button {
                 // login action
-                
+                print(getHash(forUsername: "3006031@edison.k12.nj.us"))
+                print(getSalt(forUsername: "3006031@edison.k12.nj.us"))
+                loggedIn = true
                 
             } label: {
                 Text("Sign In")
@@ -88,33 +86,169 @@ struct LoginView: View {
             .cornerRadius(20)
             .disabled(isSignInButtonDisabled) // how to disable while some condition is applied
             .padding()
+            
+            .navigationTitle("Login") // Set navigation title
+            // Navigation link to AdminView
+            NavigationLink(
+                destination: AdminDashboard(),
+                isActive: $loggedIn, // Only navigate when loggedIn is true
+                label: { EmptyView() } )
             }
         
-            Button {
-                // signup action
-                
-            } label: {
-                Text("Sign Up")
-                    .font(.title2)
-                    .bold()
-                    .foregroundColor(.white)
-            }
-            .frame(height: 50)
-            .frame(maxWidth: .infinity) // how to make a button fill all the space available horizontaly
-            .background(
-                isSignInButtonDisabled ? // how to add a gradient to a button in SwiftUI if the button is disabled
-                LinearGradient(colors: [.gray], startPoint: .topLeading, endPoint: .bottomTrailing) :
-                    LinearGradient(colors: [.blue, .red], startPoint: .topLeading, endPoint: .bottomTrailing)
-            )
-            .cornerRadius(20)
-            .disabled(isSignInButtonDisabled) // how to disable while some condition is applied
-            .padding()
         }
     
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
+// Accounts database shenanigans
+
+func openAccounts() -> OpaquePointer? {
+    let fileURL = try! FileManager.default
+        .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        .appendingPathComponent("accounts.sqlite")
+    
+    var db: OpaquePointer?
+    if sqlite3_open(fileURL.path, &db) == SQLITE_OK {
+        return db
+    }
+    else {
+        print("error opening database")
+        sqlite3_close(db)
+        db = nil
+        return db
+    }
+}
+
+func openDb() -> OpaquePointer? {
+    let fileURL = try! FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("accounts.db")
+    print("Opening database")
+    var db: OpaquePointer?
+    guard sqlite3_open(fileURL.path, &db) == SQLITE_OK else {
+        print("Error opening database")
+        sqlite3_close(db)
+        db = nil
+        return db
+    }
+    return db
+}
+
+func getHash(forUsername usernameQuery: String) -> String {
+    var queriedHash = "none"
+    
+    print("Entering getHash")
+    
+    do {
+        let dbPath = "accounts.db"
+//        let dbPath = "/Users/alvinwu/Documents/School Bus Route Software/School Bus Route Software/Databases/accounts.db"
+        print("dbPath: \(dbPath)")
+        let db = try Connection(dbPath, readonly: true)
+//        let db = openDb()
+        
+        print("Connection: \(db)")
+
+        let accounts = Table("accounts")
+        let count = accounts.count
+        print("accounts.count: \(count)")
+        
+        let username = Expression<String>("username")
+        let hash = Expression<String>("hash")
+        let salt = Expression<String>("salt")
+        let affiliation = Expression<String>("affiliation")
+        let type = Expression<String>("type")
+        
+//        try db.run(accounts.create(ifNotExists: true) { t in
+//            t.column(username)
+//            t.column(hash)
+//        })
+        
+//        let insert = accounts.insert(username <- "test1", hash <- "test2")
+//        try db.run(insert)
+        
+        // SELECT username, hash FROM accounts WHERE username = '3006031@edison.k12.nj.us'
+        let query = accounts.select(username, hash).filter(username == usernameQuery)
+
+        for user in try db.prepare(accounts) {
+            print(user)
+            print(user[hash])
+            queriedHash = user[hash]
+        }
+
+        print(accounts)
+        print(query)
+        
+        for user in try db.prepare(query) {
+            print(user[hash])
+            queriedHash = user[hash]
+        }
+        
+        
+    } catch {
+        print(error)
+    }
+    
+    return(queriedHash)
+}
+
+func getSalt(forUsername username: String) -> String {
+    let dbPath = "accounts.db" // Replace this with the actual path to your SQLite database file
+    guard let db = try? Connection(dbPath) else {
+        print("Error connecting to database")
+        return "GAH"
+    }
+    
+    let accounts = Table("accounts")
+    let hashColumn = Expression<String>("hash")
+    let saltColumn = Expression<String>("salt")
+    let usernameColumn = Expression<String>("username")
+    
+    do {
+        let query = accounts.select(hashColumn, saltColumn)
+                            .filter(usernameColumn == username)
+        
+        for row in try db.prepare(query) {
+            let salt = row[saltColumn]
+            return salt
+        }
+    } catch {
+        print("Error executing query: \(error)")
+    }
+    
+    return "getSalt done"
+}
+
+func login(username: String, password: String) -> Bool {
+    
+    
+    let hash = getHash(forUsername: username)
+    let salt = getSalt(forUsername: username)
+    
+    let pwCombined = password + salt
+    
+    let data = pwCombined.data(using: .utf8)
+    
+    let optionalData: Data? = data
+    processData(optionalData!)
+    
+    let pwHashed = String(bytes: CryptoKit.SHA256.hash(data: data!), encoding: .utf8)
+    
+    // Compare pwHashed with hash on file
+    if pwHashed == hash {
+        return true
+    }
+    else {
+        return false
+    }
+}
+
+func processData(_ optionalData: Data?) {
+    if let data = optionalData {
+        print("Data received: \(data)")
+    } else {
+        print("No data received")
+    }
+}
+
+struct ContentView_Previews: SwiftUI.PreviewProvider {
+    static var previews: some SwiftUI.View {
         LoginView()
     }
 }

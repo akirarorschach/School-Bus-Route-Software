@@ -12,6 +12,10 @@
 		C85291202B57729A00560C6F /* AdminDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C852911F2B57729A00560C6F /* AdminDashboard.swift */; };
 		C85291222B5772E400560C6F /* PersonnelDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291212B5772E400560C6F /* PersonnelDashboard.swift */; };
 		C85291242B5772F100560C6F /* ParentStudentDashboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85291232B5772F100560C6F /* ParentStudentDashboard.swift */; };
+		C87D9A412BBE579700B6CE82 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C87D9A402BBE579700B6CE82 /* SQLite */; };
+		C87D9A492BC371BB00B6CE82 /* Vapor in Frameworks */ = {isa = PBXBuildFile; productRef = C87D9A482BC371BB00B6CE82 /* Vapor */; };
+		C87D9A4C2BC3725E00B6CE82 /* Fluent in Frameworks */ = {isa = PBXBuildFile; productRef = C87D9A4B2BC3725E00B6CE82 /* Fluent */; };
+		C89AFC222BC372E700E7D497 /* FluentSQLiteDriver in Frameworks */ = {isa = PBXBuildFile; productRef = C89AFC212BC372E700E7D497 /* FluentSQLiteDriver */; };
 		C8ACF6DD2BBDD2D00025E2BB /* viewStudents.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */; };
 		C8ACF6DF2BBDD2E00025E2BB /* viewRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */; };
 		C8ACF6E12BBDD3410025E2BB /* viewShifts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */; };
@@ -20,6 +24,8 @@
 		C8ACF6E72BBDD38E0025E2BB /* managePersonnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E62BBDD38E0025E2BB /* managePersonnel.swift */; };
 		C8ACF6E92BBDD3990025E2BB /* manageRosters.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6E82BBDD3990025E2BB /* manageRosters.swift */; };
 		C8ACF6EB2BBDD3AF0025E2BB /* editRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8ACF6EA2BBDD3AF0025E2BB /* editRoute.swift */; };
+		C8ACF6F42BBDEA920025E2BB /* CryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ACF6F32BBDEA920025E2BB /* CryptoKit.framework */; };
+		C8ACF6F52BBE34880025E2BB /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C8ACF6ED2BBDD5910025E2BB /* libsqlite3.0.tbd */; };
 		C8BF0DD62B8C3576009C2BFF /* routeMgmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BF0DD52B8C3576009C2BFF /* routeMgmt.swift */; };
 		C8C0E4922B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4912B2FF746006C2BC4 /* School_Bus_Route_SoftwareApp.swift */; };
 		C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8C0E4952B2FF747006C2BC4 /* Assets.xcassets */; };
@@ -46,13 +52,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C8096E922BBE358800C59AB6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		320AF4C92BD4221700800AC4 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C852911A2B576B6100560C6F /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		C852911F2B57729A00560C6F /* AdminDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminDashboard.swift; sourceTree = "<group>"; };
 		C85291212B5772E400560C6F /* PersonnelDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonnelDashboard.swift; sourceTree = "<group>"; };
 		C85291232B5772F100560C6F /* ParentStudentDashboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentStudentDashboard.swift; sourceTree = "<group>"; };
-		C85291282B57789600560C6F /* testAccounts.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = testAccounts.geojson; sourceTree = "<group>"; };
+		C87D9A462BC0881C00B6CE82 /* accounts.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = accounts.db; sourceTree = "<group>"; };
 		C8ACF6DC2BBDD2D00025E2BB /* viewStudents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewStudents.swift; sourceTree = "<group>"; };
 		C8ACF6DE2BBDD2E00025E2BB /* viewRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewRoutes.swift; sourceTree = "<group>"; };
 		C8ACF6E02BBDD3410025E2BB /* viewShifts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewShifts.swift; sourceTree = "<group>"; };
@@ -62,6 +81,7 @@
 		C8ACF6E82BBDD3990025E2BB /* manageRosters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manageRosters.swift; sourceTree = "<group>"; };
 		C8ACF6EA2BBDD3AF0025E2BB /* editRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editRoute.swift; sourceTree = "<group>"; };
 		C8ACF6ED2BBDD5910025E2BB /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/usr/lib/libsqlite3.0.tbd; sourceTree = DEVELOPER_DIR; };
+		C8ACF6F32BBDEA920025E2BB /* CryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.4.sdk/System/Library/Frameworks/CryptoKit.framework; sourceTree = DEVELOPER_DIR; };
 		C8BF0DD42B8C3383009C2BFF /* School-Bus-Route-Software-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "School-Bus-Route-Software-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C8BF0DD52B8C3576009C2BFF /* routeMgmt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = routeMgmt.swift; sourceTree = "<group>"; };
 		C8C0E48E2B2FF746006C2BC4 /* School Bus Route Software.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "School Bus Route Software.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +101,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C87D9A4C2BC3725E00B6CE82 /* Fluent in Frameworks */,
+				C87D9A412BBE579700B6CE82 /* SQLite in Frameworks */,
+				C87D9A492BC371BB00B6CE82 /* Vapor in Frameworks */,
+				C8ACF6F52BBE34880025E2BB /* libsqlite3.0.tbd in Frameworks */,
+				C89AFC222BC372E700E7D497 /* FluentSQLiteDriver in Frameworks */,
+				C8ACF6F42BBDEA920025E2BB /* CryptoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,9 +160,18 @@
 			path = ParentStudent;
 			sourceTree = "<group>";
 		};
+		C87D9A452BC0881600B6CE82 /* Databases */ = {
+			isa = PBXGroup;
+			children = (
+				C87D9A462BC0881C00B6CE82 /* accounts.db */,
+			);
+			path = Databases;
+			sourceTree = "<group>";
+		};
 		C8ACF6EC2BBDD5900025E2BB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8ACF6F32BBDEA920025E2BB /* CryptoKit.framework */,
 				C8ACF6ED2BBDD5910025E2BB /* libsqlite3.0.tbd */,
 			);
 			name = Frameworks;
@@ -166,6 +201,7 @@
 		C8C0E4902B2FF746006C2BC4 /* School Bus Route Software */ = {
 			isa = PBXGroup;
 			children = (
+				C87D9A452BC0881600B6CE82 /* Databases */,
 				C8BF0DD42B8C3383009C2BFF /* School-Bus-Route-Software-Info.plist */,
 				C852911E2B57727400560C6F /* ParentStudent */,
 				C852911D2B57722000560C6F /* BusPersonnel */,
@@ -175,8 +211,11 @@
 				C8C0E4972B2FF747006C2BC4 /* School_Bus_Route_Software.entitlements */,
 				C8C0E4982B2FF747006C2BC4 /* Preview Content */,
 				C852911A2B576B6100560C6F /* LoginScreen.swift */,
+<<<<<<< HEAD
 				C85291282B57789600560C6F /* testAccounts.geojson */,
 				320AF4C92BD4221700800AC4 /* Extensions.swift */,
+=======
+>>>>>>> 8fda595fa4538581a2fb2ee747f0ad00a85d9b42
 			);
 			path = "School Bus Route Software";
 			sourceTree = "<group>";
@@ -216,12 +255,19 @@
 				C8C0E48A2B2FF746006C2BC4 /* Sources */,
 				C8C0E48B2B2FF746006C2BC4 /* Frameworks */,
 				C8C0E48C2B2FF746006C2BC4 /* Resources */,
+				C8096E922BBE358800C59AB6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "School Bus Route Software";
+			packageProductDependencies = (
+				C87D9A402BBE579700B6CE82 /* SQLite */,
+				C87D9A482BC371BB00B6CE82 /* Vapor */,
+				C87D9A4B2BC3725E00B6CE82 /* Fluent */,
+				C89AFC212BC372E700E7D497 /* FluentSQLiteDriver */,
+			);
 			productName = "School Bus Route Software";
 			productReference = C8C0E48E2B2FF746006C2BC4 /* School Bus Route Software.app */;
 			productType = "com.apple.product-type.application";
@@ -294,6 +340,12 @@
 				Base,
 			);
 			mainGroup = C8C0E4852B2FF746006C2BC4;
+			packageReferences = (
+				C87D9A3F2BBE579700B6CE82 /* XCRemoteSwiftPackageReference "SQLite" */,
+				C87D9A472BC371BB00B6CE82 /* XCRemoteSwiftPackageReference "vapor" */,
+				C87D9A4A2BC3725E00B6CE82 /* XCRemoteSwiftPackageReference "fluent" */,
+				C89AFC202BC372E700E7D497 /* XCRemoteSwiftPackageReference "fluent-sqlite-driver" */,
+			);
 			productRefGroup = C8C0E48F2B2FF746006C2BC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -506,7 +558,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"School Bus Route Software/Preview Content\"";
-				DEVELOPMENT_TEAM = 8W3GA9TCY3;
+				DEVELOPMENT_TEAM = W46XT2XXZV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "School-Bus-Route-Software-Info.plist";
@@ -547,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"School Bus Route Software/Preview Content\"";
-				DEVELOPMENT_TEAM = 8W3GA9TCY3;
+				DEVELOPMENT_TEAM = W46XT2XXZV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "School-Bus-Route-Software-Info.plist";
@@ -704,6 +756,64 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C87D9A3F2BBE579700B6CE82 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.0;
+			};
+		};
+		C87D9A472BC371BB00B6CE82 /* XCRemoteSwiftPackageReference "vapor" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/vapor";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		C87D9A4A2BC3725E00B6CE82 /* XCRemoteSwiftPackageReference "fluent" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/fluent.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+		C89AFC202BC372E700E7D497 /* XCRemoteSwiftPackageReference "fluent-sqlite-driver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vapor/fluent-sqlite-driver";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C87D9A402BBE579700B6CE82 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C87D9A3F2BBE579700B6CE82 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+		C87D9A482BC371BB00B6CE82 /* Vapor */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C87D9A472BC371BB00B6CE82 /* XCRemoteSwiftPackageReference "vapor" */;
+			productName = Vapor;
+		};
+		C87D9A4B2BC3725E00B6CE82 /* Fluent */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C87D9A4A2BC3725E00B6CE82 /* XCRemoteSwiftPackageReference "fluent" */;
+			productName = Fluent;
+		};
+		C89AFC212BC372E700E7D497 /* FluentSQLiteDriver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C89AFC202BC372E700E7D497 /* XCRemoteSwiftPackageReference "fluent-sqlite-driver" */;
+			productName = FluentSQLiteDriver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C8C0E4862B2FF746006C2BC4 /* Project object */;
 }
