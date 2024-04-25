@@ -87,6 +87,3 @@ struct TabButton: View {
         }
     }
 }
-
-print("Hello world")
-
