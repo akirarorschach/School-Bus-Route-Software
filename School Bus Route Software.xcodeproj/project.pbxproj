@@ -38,6 +38,7 @@
 		C8C0E4A42B2FF747006C2BC4 /* School_Bus_Route_SoftwareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4A32B2FF747006C2BC4 /* School_Bus_Route_SoftwareTests.swift */; };
 		C8C0E4AE2B2FF747006C2BC4 /* School_Bus_Route_SoftwareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4AD2B2FF747006C2BC4 /* School_Bus_Route_SoftwareUITests.swift */; };
 		C8C0E4B02B2FF747006C2BC4 /* School_Bus_Route_SoftwareUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C0E4AF2B2FF747006C2BC4 /* School_Bus_Route_SoftwareUITestsLaunchTests.swift */; };
+		C8C835192BE092A5004E1F22 /* attendance.db in Resources */ = {isa = PBXBuildFile; fileRef = C8C835182BE092A5004E1F22 /* attendance.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,7 @@
 		C8C0E4A92B2FF747006C2BC4 /* School Bus Route SoftwareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "School Bus Route SoftwareUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8C0E4AD2B2FF747006C2BC4 /* School_Bus_Route_SoftwareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_Bus_Route_SoftwareUITests.swift; sourceTree = "<group>"; };
 		C8C0E4AF2B2FF747006C2BC4 /* School_Bus_Route_SoftwareUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = School_Bus_Route_SoftwareUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C8C835182BE092A5004E1F22 /* attendance.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = attendance.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 		C87D9A452BC0881600B6CE82 /* Databases */ = {
 			isa = PBXGroup;
 			children = (
+				C8C835182BE092A5004E1F22 /* attendance.db */,
 				C8AC2B382BD9ABD300B8AF8A /* addresses.db */,
 				C87D9A462BC0881C00B6CE82 /* accounts.db */,
 			);
@@ -377,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C835192BE092A5004E1F22 /* attendance.db in Resources */,
 				C8AC2B392BD9ABD300B8AF8A /* addresses.db in Resources */,
 				C8C0E49A2B2FF747006C2BC4 /* Preview Assets.xcassets in Resources */,
 				C8C0E4962B2FF747006C2BC4 /* Assets.xcassets in Resources */,
